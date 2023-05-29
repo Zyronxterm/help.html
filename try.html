@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>All About myself</title>
+    </head>
+    <body>
+      <marquee bgcolor="#22ded9" loop="5" scrollamount="9" width="100%">All About Me and What I want to be</marquee>
+      <marquee bgcolor="#57f7e7" loop="1" scrollamount="2" width="100%" height="350" direction="Up">Hello Humans,<BR>My name is Zyron V. Atilano, I live in Zamboanga City, Philippines. I Love watching Anime and Movies, Especially Anime and Movies that is Horror, Murder Genre. I like the colors red and black as for they Remind me of <font color="#ec2525" size="4"><b>Blood</b></font> and <font color="#000000" size="4"><b>Darkness.</b></font> I've Always wanted to be an Engineer, Building houses by my name, Build buildings for big compancompanies, Create school etc. I Also want to become a Principal in my  own school. I want to be a Streamer one day, Playing games, Making videos, editing videos. I have lots and lots of dreams to achieve, that's why I'll do my best in school so all of those dreams will come true. </marquee>
+<body>
+  <canvas id="myCanvas" width="350" height="200"></canvas>
+  <script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    var x = canvas.width/2;
+    var y = canvas.height-30;
+    var dx = 2;
+    var dy = -2;
+    var ballRadius = 10;
+
+    function drawBall() {
+      ctx.beginPath();
+      ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+      ctx.fillStyle = "#3effff";
+      ctx.fill();
+      ctx.closePath();
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawBall();
+      x += dx;
+      y += dy;
+
+      if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+        dx = -dx;
+      }
+      if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
+        dy = -dy;
+      }
+    }
+
+    setInterval(draw, 10);
+  </script>
+</body>
+</html>
